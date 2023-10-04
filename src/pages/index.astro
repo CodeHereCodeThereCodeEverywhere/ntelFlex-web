@@ -1,0 +1,56 @@
+---
+import Hero from "../components/HeroComponents/Hero";
+import NavigationFooter from "../components/Footer/NavigationFooter";
+import WhatWeDo from "../components/WWD/WhatWeDo";
+import GridLogos from "../components/GridLogos/GridLogos";
+import NtelFlexLLC from "../components/NtelFlexLLC/NtelFlexLLC";
+import Header from "../components/Navigation/Header";
+import WhoWeAre from "../components/WWD/WhoWeAre";
+import { GridLogosPath } from "../data/data";
+import ServicesComponent from "../components/ServicesComponent/ServicesComponent";
+import { OurServices } from "../data/data";
+import Faq from "../components/ServicesComponent/Faq";
+import { FaqAccord } from "../data/data";
+import { metaTitle } from "../data/data";
+import Faq2 from "../components/ServicesComponent/Faq2";
+
+
+
+
+export type Title = "FAQ" | "Why Choose NtelFlex?";
+export type serviceTitle = "Our Services" | "Solutions" | "Services";
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{metaTitle}</title>
+  </head>
+  <body class="bg-bgColor   ">
+   
+      <Header  path={"/"} client:only="react" />
+      <Hero />
+      <WhatWeDo client:only="react"/>
+      <!-- <ServicesComponent client:only="react"
+        serviceTitle={"Our Services" as serviceTitle}
+        props={OurServices.home}
+      /> -->
+      <WhoWeAre client:only="react"/>
+      <NtelFlexLLC />
+
+      <GridLogos props={GridLogosPath} />
+      <!-- <Faq client:only="react" title={"FAQ" as Title} props={FaqAccord} />
+      <Faq2 client:only="react" title={"FAQ" as Title} props={FaqAccord}/> -->
+      <NavigationFooter client:load />
+      
+     
+    
+  </body>
+</html>

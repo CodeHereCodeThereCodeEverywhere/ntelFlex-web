@@ -1,0 +1,31 @@
+---
+import Header from "../components/Navigation/Header";
+import AboutHero from "../components/HeroComponents/AboutHero";
+import AboutDescription from "../components/Description/AboutDescription";
+import Footer from "../components/Footer/Footer.astro";
+import Faq from "../components/ServicesComponent/Faq";
+import { FaqAbout, FaqAccord, metaTitle } from "../data/data";
+import { Title } from "./index.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>About | NtelFlex</title>
+  </head>
+  <body class="bg-bgColor">
+    <Header path={"/about"} client:only="react"/>
+    <AboutHero />
+    <span
+      class="mt-[130px] leading-[120px] text-[110px] text-right flex mr-[60px] justify-end font-medium text-darkText font-hanken"
+      >Transform Your Home <br /> with NtelFlex</span
+    >
+    <AboutDescription />
+    <Faq title={"Why Choose NtelFlex?" as Title} props={FaqAbout} />
+    <Footer />
+  </body>
+</html>

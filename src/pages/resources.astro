@@ -1,0 +1,28 @@
+---
+import Navigation from "../components/Navigation/Navigation.astro";
+import Footer from "../components/Footer/Footer.astro";
+import Resources from "../components/Description/Resources";
+import { resourceText } from "../components/Description/descriptionData.astro";
+import Heading from "../components/Description/Heading";
+import Header from "../components/Navigation/Header";
+import { metaTitle } from "../data/data";
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Resources | NtelFlex</title>
+  </head>
+
+  <body class="bg-bgColor">
+    <Header path={"/resources"} client:only="react"/>
+    <Heading props="Resources" />
+    <Resources props={resourceText}  client:load/>   
+    <Footer />
+  </body>
+</html>
